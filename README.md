@@ -8,7 +8,7 @@ A simple game of Battleship, written in PHP. Created by Sergey https://github.co
 
 # Getting started
 
-This project requires a php5 or higher. To prepare to work with it, pick one of these
+This project requires a php7 or higher. To prepare to work with it, pick one of these
 options:
 
 ## Run locally
@@ -23,7 +23,7 @@ composer run game
 
 Install dependencies
 ```bash
-composer install
+composer update
 ```
 
 Run tests
@@ -58,4 +58,11 @@ composer install
 Run tests:
 ```
 composer run test
+```
+
+### Troubleshooting 
+
+1. On my ubuntu virtual server on DO I needed to install:
+```bash
+apt-get install composer php7.2-mbstring php7.2-dom
 ```
