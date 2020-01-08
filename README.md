@@ -1,3 +1,5 @@
+[![Build status](https://psdstewards.visualstudio.com/PSD/_apis/build/status/proscrumdev.battleship-cpp-CI)](https://psdstewards.visualstudio.com/PSD/_build/latest?definitionId=21)
+
 # Battleship PHP
 
 A simple game of Battleship, written in PHP.
