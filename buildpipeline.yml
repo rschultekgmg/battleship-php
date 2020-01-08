@@ -22,11 +22,11 @@ steps:
     php -version
   displayName: 'Use PHP version $(phpVersion)'
 
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
-
 - script: composer update --no-interaction --prefer-dist
   displayName: 'composer update'
   
+- script: composer install --no-interaction --prefer-dist
+  displayName: 'composer install'
+ 
 - script: composer run test
   displayName: Run test suite
