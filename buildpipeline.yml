@@ -30,3 +30,8 @@ steps:
  
 - script: composer run test
   displayName: Run test suite
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
