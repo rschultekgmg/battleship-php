@@ -1,11 +1,16 @@
-<testsuites>
-    <testsuite name="Application tests">
-        <directory>test/</directory>
-        <file>test/AppTests.php</file>
-        <file>test/AppE2ETests.php</file>
-    </testsuite>
-    <testsuite name="Battleship GameController tests">
-        <directory>test/</directory>
-        <file>test/Battleship/GameControllerTests.php</file>
-    </testsuite>
-</testsuites>
+<phpunit>
+    <testsuites>
+        <testsuite name="Application tests">
+            <directory>test/</directory>
+            <file>test/AppTests.php</file>
+            <file>test/AppE2ETests.php</file>
+        </testsuite>
+        <testsuite name="Battleship GameController tests">
+            <directory>test/</directory>
+            <file>test/Battleship/GameControllerTests.php</file>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="junit" target="test/TEST-Results.xml"/>
+    </logging>
+</phpunit>
