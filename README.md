@@ -52,7 +52,7 @@ composer run game
 
 Don't forget to install dependencies ;)
 ```bash
-composer install
+composer update
 ```
 
 Run tests:
