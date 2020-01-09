@@ -17,7 +17,7 @@
     "game": "App::run",
     "test": [
       "vendor/bin/phpunit --bootstrap vendor/autoload.php -c phpunit.xml",
-      "vendor/bin/behat"
+      "vendor/bin/behat -f pretty -o std -f junit -o testresults"
     ],
     "unittest" : "vendor/bin/phpunit --bootstrap vendor/autoload.php -c phpunit.xml"
   }
