@@ -31,6 +31,25 @@ steps:
 - script: composer run test
   displayName: Run test suite
 
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: |
+      src/**/*.*
+      test/**/*.*
+      features/**/*.*
+      composer.*
+      *.xml
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
