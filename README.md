@@ -2,7 +2,8 @@
 
 # Battleship PHP
 
-A simple game of Battleship, written in PHP. Created by Sergey https://github.com/2heoh 
+A simple game of Battleship, written in PHP. The purpose of this repository is to serve as an entry point into coding exercises and it was especially created for scrum.orgs Applying Professional Scrum for Software Development course (www.scrum.org/apssd). The code in this repository is unfinished by design.
+Created by Sergey https://github.com/2heoh 
 
 # Getting started
 
