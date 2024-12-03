@@ -153,7 +153,7 @@ class App
             $isHit = GameController::checkIsHit(self::$myFleet, $position);
             self::$console->println();
             self::$console->println("======================================");
-            self::$console->println(Color::YELLOW);
+            self::$console->println($isHit ? Color::RED : Color::CADET_BLUE);
             printf("Computer shoot in %s%s and %s", $position->getColumn(), $position->getRow(), $isHit ? "hit your ship !\n" : "miss");
             if ($isHit) {
                 self::beep();
