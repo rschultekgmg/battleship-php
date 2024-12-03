@@ -118,14 +118,17 @@ class App
         self::$console->println("    \" \"\" \"\" \"\" \"");
 
         while (true) {
+            self::$console->println(Color::YELLOW);
             self::$console->println("");
             self::$console->println("Player, it's your turn");
             self::$console->println("Enter coordinates for your shot :");
+            self::$console->println(Color::DEFAULT_GREY);
             $position = readline("");
 
             $isHit = GameController::checkIsHit(self::$enemyFleet, self::parsePosition($position));
             if ($isHit) {
                 self::beep();
+                self::$console->println(Color::RED);
                 self::$console->println("                \\         .  ./");
                 self::$console->println("              \\      .:\" \";'.:..\" \"   /");
                 self::$console->println("                  (M^^.^~~:.'\" \").");
@@ -134,6 +137,7 @@ class App
                 self::$console->println("            -   (\\- |  \\ /  |  /)  -");
                 self::$console->println("                 -\\  \\     /  /-");
                 self::$console->println("                   \\  \\   /  /");
+                self::$console->println(Color::DEFAULT_GREY);
             }
 
             echo $isHit ? "Yeah ! Nice hit !" : "Miss";
@@ -145,7 +149,7 @@ class App
             printf("Computer shoot in %s%s and %s", $position->getColumn(), $position->getRow(), $isHit ? "hit your ship !\n" : "miss");
             if ($isHit) {
                 self::beep();
-
+                self::$console->println(Color::RED);
                 self::$console->println("                \\         .  ./");
                 self::$console->println("              \\      .:\" \";'.:..\" \"   /");
                 self::$console->println("                  (M^^.^~~:.'\" \").");
@@ -154,7 +158,7 @@ class App
                 self::$console->println("            -   (\\- |  \\ /  |  /)  -");
                 self::$console->println("                 -\\  \\     /  /-");
                 self::$console->println("                   \\  \\   /  /");
-
+                self::$console->println(Color::DEFAULT_GREY);
             }
 
 //            exit();
