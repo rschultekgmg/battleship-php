@@ -166,10 +166,14 @@ class App
                 self::$console->println("            -   (\\- |  \\ /  |  /)  -");
                 self::$console->println("                 -\\  \\     /  /-");
                 self::$console->println("                   \\  \\   /  /");
-                self::$console->println(Color::DEFAULT_GREY);
+            } else {
+                self::$console->println(Color::CADET_BLUE);
+                self::$console->println("╔═════════════╗");
+                self::$console->println("║ ( ͡⚆ ͜ʖ ͡⚆)╭∩╮ ║");
+                self::$console->println("╚═════════════╝");
+                self::$console->println("Miss");
             }
-
-//            exit();
+            self::$console->println(Color::DEFAULT_GREY);
         }
     }
 
