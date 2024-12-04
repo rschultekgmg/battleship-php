@@ -118,11 +118,11 @@ class App
         self::$console->println("    \" \"\" \"\" \"\" \"");
 
         while (true) {
-            self::$console->println(Color::DEFAULT_GREY);
+            self::$console->println(Color::WHITE);
             self::$console->println("======================================");
             self::$console->println(Color::YELLOW);
             self::$console->println("Player, it's your turn");
-            self::$console->println(Color::DEFAULT_GREY);
+            self::$console->println(Color::WHITE);
             self::$console->println("Enter coordinates for your shot :");
             $position = readline("");
 
@@ -142,12 +142,10 @@ class App
                 self::$console->println("Yeah ! Nice hit !");
             } else {
                 self::$console->println(Color::CADET_BLUE);
-                self::$console->println("╔═════════════╗");
-                self::$console->println("║ ( ͡⚆ ͜ʖ ͡⚆)╭∩╮ ║");
-                self::$console->println("╚═════════════╝");
+                self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
                 self::$console->println("Miss");
             }
-            self::$console->println(Color::DEFAULT_GREY);
+            self::$console->println(Color::WHITE);
 
             $position = self::getRandomPosition();
             $isHit = GameController::checkIsHit(self::$myFleet, $position);
@@ -168,12 +166,10 @@ class App
                 self::$console->println("                   \\  \\   /  /");
             } else {
                 self::$console->println(Color::CADET_BLUE);
-                self::$console->println("╔═════════════╗");
-                self::$console->println("║ ( ͡⚆ ͜ʖ ͡⚆)╭∩╮ ║");
-                self::$console->println("╚═════════════╝");
+                self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
                 self::$console->println("Miss");
             }
-            self::$console->println(Color::DEFAULT_GREY);
+            self::$console->println(Color::WHITE);
         }
     }
 
