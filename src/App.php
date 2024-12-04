@@ -148,6 +148,9 @@ class App
                 self::$console->println("Miss");
             }
             $gameInProgress = self::endGame(self::$enemyFleet);
+            if(!$gameInProgress) {
+                self::$showVictoryMessage();
+            }
             self::$console->println(Color::WHITE);
 
             if ($gameInProgress) {
@@ -202,6 +205,39 @@ class App
                 self::$console->println("Koniec gry!");
             }
         }
+        $closeConsole = true;
+        while ($closeConsole) {    
+            self::$console->println("Wciśnij ENTER jeśli chcesz wyłączyć grę?");    
+            readline("");
+            $closeConsole = false;
+        }
+    }
+
+    private static function showVictoryMessage() {
+        self::beep();
+        self::$console->println(Color::YELLOW);
+        self::$console->println("       ⭐️ YOU ARE AWESOME! ⭐️");
+        self::$console->println("    \\☆.。.:*・°☆.。.:*・°☆.。.:*・°☆./");
+        self::$console->println("         _______________");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        \\@@@@|     |####/");
+        self::$console->println("         \\@@@|     |###/");
+        self::$console->println("          `@@|_____|##'");
+        self::$console->println("               (O)");
+        self::$console->println("           .-''''''-.");
+        self::$console->println("         .'  * * *  `.");
+        self::$console->println("        :  *       *  :");
+        self::$console->println("        : ~ WINNER  ~ :");
+        self::$console->println("         :  *     *  :");
+        self::$console->println("          `.  * *  .'");
+        self::$console->println("            `-...-'");
+        self::$console->println(Color::CHARTREUSE);
+        self::$console->println("       🏆 VICTORY IS YOURS! 🏆");
+        self::$console->println(Color::YELLOW);
+        self::$console->println("    /☆.。.:*・°☆.。.:*・°☆.。.:*・°☆\\");
+        self::$console->println("");
     }
 
     public static function endGame ($fleet) {
