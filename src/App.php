@@ -133,7 +133,17 @@ class App
                 self::$console->println("Yeah ! Nice hit !");
             } else {
                 self::$console->println(Color::CADET_BLUE);
-                self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
+                self::$console->println("≋≋≋≋≋      |\\        ≋≋≋≋≋");
+                self::$console->println(" ≋≋≋≋     |⚓\\       ≋≋≋≋");
+                self::$console->println("  ≋≋≋     |  \\      ≋≋≋");
+                self::$console->println("≋≋≋≋≋     |   \\    ≋≋≋≋≋");
+                self::$console->println(" ≋≋≋ .|   _|    \\    ≋≋≋");
+                self::$console->println("≋≋≋≋ /|\\  |⎈      \\  ≋≋≋≋");
+                self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
+                self::$console->println("≋≋≋\\______________|  \\≋≋≋");
+                self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
+                self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
+                self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
                 self::$console->println("");
                 self::$console->println("Miss");
             }
@@ -158,7 +168,17 @@ class App
                 self::$console->println("                   \\  \\   /  /");
             } else {
                 self::$console->println(Color::CADET_BLUE);
-                self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
+                self::$console->println("≋≋≋≋≋      |\\        ≋≋≋≋≋");
+                self::$console->println(" ≋≋≋≋     |⚓\\       ≋≋≋≋");
+                self::$console->println("  ≋≋≋     |  \\      ≋≋≋");
+                self::$console->println("≋≋≋≋≋     |   \\    ≋≋≋≋≋");
+                self::$console->println(" ≋≋≋ .|   _|    \\    ≋≋≋");
+                self::$console->println("≋≋≋≋ /|\\  |⎈      \\  ≋≋≋≋");
+                self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
+                self::$console->println("≋≋≋\\______________|  \\≋≋≋");
+                self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
+                self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
+                self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
                 self::$console->println("");
                 self::$console->println("Miss");
             }
