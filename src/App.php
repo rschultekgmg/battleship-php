@@ -10,6 +10,12 @@ class App
     private static $myFleet = array();
     private static $enemyFleet = array();
     private static $console;
+    private static $dev = false;
+
+    static function runDev() {
+        self::$dev = true;
+        self::run();
+    }
 
     static function run()
     {
@@ -40,7 +46,9 @@ class App
         self::$enemyFleet = GameController::initializeShips();
 
         $random = random_int(1, 5);
-        self::$console->println("I drew a list of ships for the computer: " . $random);
+        if (self::$dev) {
+            self::$console->println("I drew a list of ships for the computer: " . $random);
+        }
         self::positionEnemyShips($random);
     }
 
