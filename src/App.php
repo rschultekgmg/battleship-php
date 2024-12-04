@@ -107,7 +107,8 @@ class App
         self::$console->println("   \\    \\_/");
         self::$console->println("    \" \"\" \"\" \"\" \"");
 
-        while (true) {
+        $gameInProgress = true;
+        while ($gameInProgress) {
             self::$console->println(Color::DEFAULT_GREY);
             self::$console->println("======================================");
             self::$console->println(Color::YELLOW);
@@ -159,7 +160,15 @@ class App
                 self::$console->println(Color::DEFAULT_GREY);
             }
 
-//            exit();
+            $endGame = true;
+            foreach (self::$enemyFleet as $ship) {
+                if (!$ship->isSunk()) {
+                    $endGame = false;
+                }
+            }
+            if ($endGame) {
+                $gameInProgress = false;
+            }
         }
     }
 
