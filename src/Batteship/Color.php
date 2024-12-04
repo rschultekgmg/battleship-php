@@ -4,6 +4,7 @@ namespace Battleship;
 
 class Color
 {
+    const WHITE = "\e[97m";
     const DEFAULT_GREY = "\e[39m";
     const MAGENTA = "\e[95m";
     const CADET_BLUE = "\e[34m";
