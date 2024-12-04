@@ -149,7 +149,7 @@ class App
             }
             $gameInProgress = self::endGame(self::$enemyFleet);
             if(!$gameInProgress) {
-                self::$showVictoryMessage();
+                self::showVictoryMessage();
             }
             self::$console->println(Color::WHITE);
 
