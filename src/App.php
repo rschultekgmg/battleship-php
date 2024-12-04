@@ -147,53 +147,68 @@ class App
                 self::$console->println("");
                 self::$console->println("Miss");
             }
+            $gameInProgress = self::endGame(self::$enemyFleet);
             self::$console->println(Color::WHITE);
 
-            $position = self::getRandomPosition();
-            $isHit = GameController::checkIsHit(self::$myFleet, $position);
-            self::$console->println();
-            self::$console->println("======================================");
-            self::$console->println($isHit ? Color::RED : Color::CADET_BLUE);
-            printf("Computer shoot in %s%s and %s", $position->getColumn(), $position->getRow(), $isHit ? "hit your ship !\n" : "miss");
-            if ($isHit) {
-                self::beep();
-                self::$console->println(Color::RED);
-                self::$console->println("                \\         .  ./");
-                self::$console->println("              \\      .:\" \";'.:..\" \"   /");
-                self::$console->println("                  (M^^.^~~:.'\" \").");
-                self::$console->println("            -   (/  .    . . \\ \\)  -");
-                self::$console->println("               ((| :. ~ ^  :. .|))");
-                self::$console->println("            -   (\\- |  \\ /  |  /)  -");
-                self::$console->println("                 -\\  \\     /  /-");
-                self::$console->println("                   \\  \\   /  /");
-            } else {
-                self::$console->println(Color::CADET_BLUE);
-                self::$console->println("≋≋≋≋≋      |\\        ≋≋≋≋≋");
-                self::$console->println(" ≋≋≋≋     |⚓\\       ≋≋≋≋");
-                self::$console->println("  ≋≋≋     |  \\      ≋≋≋");
-                self::$console->println("≋≋≋≋≋     |   \\    ≋≋≋≋≋");
-                self::$console->println(" ≋≋≋ .|   _|    \\    ≋≋≋");
-                self::$console->println("≋≋≋≋ /|\\  |⎈      \\  ≋≋≋≋");
-                self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
-                self::$console->println("≋≋≋\\______________|  \\≋≋≋");
-                self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
-                self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
-                self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
-                self::$console->println("");
-                self::$console->println("Miss");
-            }
-            self::$console->println(Color::WHITE);
-
-            $endGame = true;
-            foreach (self::$enemyFleet as $ship) {
-                if (!$ship->isSunk()) {
-                    $endGame = false;
+            if ($gameInProgress) {
+                $position = self::getRandomPosition();
+                $isHit = GameController::checkIsHit(self::$myFleet, $position);
+                self::$console->println();
+                self::$console->println("======================================");
+                self::$console->println($isHit ? Color::RED : Color::CADET_BLUE);
+                printf("Computer shoot in %s%s and %s", $position->getColumn(), $position->getRow(), $isHit ? "hit your ship !\n" : "miss");
+                if ($isHit) {
+                    self::beep();
+                    self::$console->println(Color::RED);
+                    self::$console->println("                \\         .  ./");
+                    self::$console->println("              \\      .:\" \";'.:..\" \"   /");
+                    self::$console->println("                  (M^^.^~~:.'\" \").");
+                    self::$console->println("            -   (/  .    . . \\ \\)  -");
+                    self::$console->println("               ((| :. ~ ^  :. .|))");
+                    self::$console->println("            -   (\\- |  \\ /  |  /)  -");
+                    self::$console->println("                 -\\  \\     /  /-");
+                    self::$console->println("                   \\  \\   /  /");
+                } else {
+                    self::$console->println(Color::CADET_BLUE);
+                    self::$console->println("≋≋≋≋≋      |\\        ≋≋≋≋≋");
+                    self::$console->println(" ≋≋≋≋     |⚓\\       ≋≋≋≋");
+                    self::$console->println("  ≋≋≋     |  \\      ≋≋≋");
+                    self::$console->println("≋≋≋≋≋     |   \\    ≋≋≋≋≋");
+                    self::$console->println(" ≋≋≋ .|   _|    \\    ≋≋≋");
+                    self::$console->println("≋≋≋≋ /|\\  |⎈      \\  ≋≋≋≋");
+                    self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
+                    self::$console->println("≋≋≋\\______________|  \\≋≋≋");
+                    self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
+                    self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
+                    self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
+                    self::$console->println("");
+                    self::$console->println("Miss");
                 }
+                self::$console->println(Color::WHITE);
+                $gameInProgress = self::endGame(self::$enemyFleet);
             }
-            if ($endGame) {
-                $gameInProgress = false;
+
+            if (!$gameInProgress) {
+                self::$console->println(Color::YELLOW);
+                self::$console->println("Koniec gry!");
             }
         }
+    }
+
+    public static function endGame ($fleet) {
+        $endGame = true;
+
+        foreach ($fleet as $ship) {
+            if (!$ship->isSunk()) {
+                $endGame = false;
+            }
+        }
+
+        if ($endGame) {
+            return false;
+        }
+
+        return true;
     }
 
     public static function parsePosition($input)
