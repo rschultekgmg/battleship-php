@@ -151,6 +151,15 @@ class App
             self::$console->println(Color::WHITE);
 
             if ($gameInProgress) {
+                self::$console->println(Color::YELLOW);
+                self::$console->println("Enemy ships that has been sunk:");
+                foreach (self::$enemyFleet as $ship) {
+                    if ($ship->isSunk()) {
+                        self::$console->println(Color::RED);
+                        self::$console->println("You sunk the " . $ship->getName());
+                        self::$console->println(Color::WHITE);
+                    }
+                }
                 $position = self::getRandomPosition();
                 $isHit = GameController::checkIsHit(self::$myFleet, $position);
                 self::$console->println();
