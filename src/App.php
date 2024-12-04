@@ -143,6 +143,7 @@ class App
             } else {
                 self::$console->println(Color::CADET_BLUE);
                 self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
+                self::$console->println("");
                 self::$console->println("Miss");
             }
             self::$console->println(Color::WHITE);
@@ -167,6 +168,7 @@ class App
             } else {
                 self::$console->println(Color::CADET_BLUE);
                 self::$console->println("﹏﹏𓊝﹏﹏🌊﹏");
+                self::$console->println("");
                 self::$console->println("Miss");
             }
             self::$console->println(Color::WHITE);
