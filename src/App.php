@@ -39,27 +39,9 @@ class App
     {
         self::$enemyFleet = GameController::initializeShips();
 
-        array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 4));
-        array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 5));
-        array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 6));
-        array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 7));
-        array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 8));
-
-        array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 6));
-        array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 7));
-        array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 8));
-        array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 9));
-
-        array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 3));
-        array_push(self::$enemyFleet[2]->getPositions(), new Position('B', 3));
-        array_push(self::$enemyFleet[2]->getPositions(), new Position('C', 3));
-
-        array_push(self::$enemyFleet[3]->getPositions(), new Position('F', 8));
-        array_push(self::$enemyFleet[3]->getPositions(), new Position('G', 8));
-        array_push(self::$enemyFleet[3]->getPositions(), new Position('H', 8));
-
-        array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 5));
-        array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 6));
+        $random = random_int(1, 5);
+        self::$console->println("I drew a list of ships for the computer: " . $random);
+        self::positionEnemyShips($random);
     }
 
     public static function getRandomPosition()
@@ -183,5 +165,140 @@ class App
         }
 
         return new Position($letter, $number);
+    }
+
+    public static function positionEnemyShips($random)
+    {
+        if ($random == 1) {
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 4));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 5));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 6));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 7));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 8));
+
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 6));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 7));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 8));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 9));
+
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 3));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('B', 3));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('C', 3));
+
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('F', 8));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('G', 8));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('H', 8));
+
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 5));
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 6));
+        } elseif($random == 2) {
+            // Pięciomasztowiec
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('C', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('C', 3));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('C', 4));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('C', 5));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('C', 6));
+
+            // Czteromasztowiec
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 5));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('F', 5));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('G', 5));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('H', 5));
+
+            // Trzymasztowiec 1
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 7));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('B', 7));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('C', 7));
+
+            // Trzymasztowiec 2
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('E', 1));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('F', 1));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('G', 1));
+
+            // Dwumasztowiec
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('B', 4));
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 4));
+        } elseif($random == 3) {
+            // Pięciomasztowiec
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('D', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('F', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('G', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('H', 2));
+
+            // Czteromasztowiec
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 5));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 6));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 7));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 8));
+
+            // Trzymasztowiec 1
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 4));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 5));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 6));
+
+            // Trzymasztowiec 2
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('F', 4));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('G', 4));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('H', 4));
+
+            // Dwumasztowiec
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 3));
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('D', 3));
+        } elseif ($random == 4) {
+            // Pięciomasztowiec
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 1));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 3));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 4));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 5));
+
+            // Czteromasztowiec
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 3));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('F', 3));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('G', 3));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('H', 3));
+
+            // Trzymasztowiec 1
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('D', 6));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('D', 7));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('D', 8));
+
+            // Trzymasztowiec 2
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('A', 2));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('A', 3));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('A', 4));
+
+            // Dwumasztowiec
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 5));
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('D', 5));
+        } else {
+            // Pięciomasztowiec
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 1));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 2));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 3));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 4));
+            array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 5));
+
+            // Czteromasztowiec
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 6));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 7));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 8));
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 8));
+
+            // Trzymasztowiec 1
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('C', 3));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('D', 3));
+            array_push(self::$enemyFleet[2]->getPositions(), new Position('E', 3));
+
+            // Trzymasztowiec 2
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('F', 6));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('G', 6));
+            array_push(self::$enemyFleet[3]->getPositions(), new Position('H', 6));
+
+            // Dwumasztowiec
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('B', 4));
+            array_push(self::$enemyFleet[4]->getPositions(), new Position('C', 4));
+        }
     }
 }
