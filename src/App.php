@@ -158,9 +158,7 @@ class App
                 self::$console->println("Enemy ships that has been sunk:");
                 foreach (self::$enemyFleet as $ship) {
                     if ($ship->isSunk()) {
-                        self::$console->println(Color::RED);
-                        self::$console->println("You sunk the " . $ship->getName());
-                        self::$console->println(Color::WHITE);
+                        self::$console->println(Color::RED . "You sunk the " . $ship->getName() . Color::WHITE);
                     }
                 }
                 $position = self::getRandomPosition();
