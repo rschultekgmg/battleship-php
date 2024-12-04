@@ -15,6 +15,7 @@
   },
   "scripts": {
     "game": "App::run",
+    "gameDev": "App::runDev",
     "test": [
       "vendor/bin/phpunit --bootstrap vendor/autoload.php -c phpunit.xml",
       "vendor/bin/behat -f pretty -o std -f junit -o testresults"

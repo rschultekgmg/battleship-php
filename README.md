@@ -18,6 +18,11 @@ Run battleship with composer
 composer run game
 ```
 
+To run dev use 
+```bash
+composer run gameDev
+```
+
 ## Execute tests with composer
 
 Install dependencies
