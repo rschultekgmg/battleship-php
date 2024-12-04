@@ -298,10 +298,10 @@ class App
             array_push(self::$enemyFleet[0]->getPositions(), new Position('E', 5));
 
             // Czteromasztowiec
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 5));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 6));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 7));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('A', 8));
-            array_push(self::$enemyFleet[1]->getPositions(), new Position('B', 8));
 
             // Trzymasztowiec 1
             array_push(self::$enemyFleet[2]->getPositions(), new Position('C', 3));
