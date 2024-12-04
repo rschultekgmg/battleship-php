@@ -9,6 +9,7 @@ class Position
      */
     private $column;
     private $row;
+    private $isHit;
 
     /**
      * Position constructor.
@@ -31,10 +32,18 @@ class Position
         return $this->row;
     }
 
+    public function setHit()
+    {
+        $this->isHit = true;
+    }
+
+    public function isHit()
+    {
+        return $this->isHit;
+    }
+
     public function __toString()
     {
         return sprintf("%s%s", $this->column, $this->row);
     }
-
-
 }
