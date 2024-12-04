@@ -195,6 +195,33 @@ class App
         }
     }
 
+    private static function showVictoryMessage() {
+        self::beep();
+        self::$console->println(Color::YELLOW);
+        self::$console->println("       ⭐️ YOU ARE AWESOME! ⭐️");
+        self::$console->println("    \\☆.。.:*・°☆.。.:*・°☆.。.:*・°☆./");
+        self::$console->println("         _______________");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        |@@@@|     |####|");
+        self::$console->println("        \\@@@@|     |####/");
+        self::$console->println("         \\@@@|     |###/");
+        self::$console->println("          `@@|_____|##'");
+        self::$console->println("               (O)");
+        self::$console->println("           .-''''''-.");
+        self::$console->println("         .'  * * *  `.");
+        self::$console->println("        :  *       *  :");
+        self::$console->println("        : ~ WINNER  ~ :");
+        self::$console->println("         :  *     *  :");
+        self::$console->println("          `.  * *  .'");
+        self::$console->println("            `-...-'");
+        self::$console->println(Color::CHARTREUSE);
+        self::$console->println("       🏆 VICTORY IS YOURS! 🏆");
+        self::$console->println(Color::YELLOW);
+        self::$console->println("    /☆.。.:*・°☆.。.:*・°☆.。.:*・°☆\\");
+        self::$console->println("");
+    }
+
     public static function endGame ($fleet) {
         $endGame = true;
 
