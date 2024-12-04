@@ -148,6 +148,9 @@ class App
                 self::$console->println("Miss");
             }
             $gameInProgress = self::endGame(self::$enemyFleet);
+            if(!$gameInProgress) {
+                self::$showVictoryMessage();
+            }
             self::$console->println(Color::WHITE);
 
             if ($gameInProgress) {
@@ -201,6 +204,12 @@ class App
                 self::$console->println(Color::YELLOW);
                 self::$console->println("Koniec gry!");
             }
+        }
+        $closeConsole = true;
+        while ($closeConsole) {    
+            self::$console->println("Wciśnij ENTER jeśli chcesz wyłączyć grę?");    
+            readline("");
+            $closeConsole = false;
         }
     }
 
