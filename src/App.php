@@ -84,7 +84,7 @@ class App
                         $position = true;
                     } catch (\Exception $e) {
                         self::$console->setForegroundColor(Color::RED);
-                        self::$console->println("Error: " . $e->getMessage());
+                        self::$console->println("Position out of reach." . Color::WHITE);
                         $position = null;
                         continue;
                     }
