@@ -194,6 +194,9 @@ class App
                 }
                 self::$console->println(Color::WHITE);
                 $gameInProgress = self::endGame(self::$enemyFleet);
+                if(!$gameInProgress) {
+                    self::$console->println(Color::YELLOW . "You LOST!" . Color::WHITE);
+                }
             }
 
             if (!$gameInProgress) {
