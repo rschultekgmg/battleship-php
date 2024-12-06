@@ -81,6 +81,9 @@ class App
                 while ($position == null) {
                     try {
                         $input = readline("");
+                        if (strlen($input) > 2) {
+                            throw new Exception("Input too long.");
+                        }
                         if (in_array($input, $existingPositions)) {
                             throw new \Exception("Position taken.");
                         }
