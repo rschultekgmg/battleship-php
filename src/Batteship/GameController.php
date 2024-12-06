@@ -50,7 +50,7 @@ class GameController
         $lines = 8;
 
         $letter = Letter::value(random_int(0, $lines - 1));
-        $number = random_int(0, $rows - 1);
+        $number = random_int(1, $rows);
 
         return new Position($letter, $number);
     }
