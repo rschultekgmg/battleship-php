@@ -69,6 +69,7 @@ class App
 
         self::$console->println("Please position your fleet (Game board has size from A to H and 1 to 8) :");
 
+        $existingPositions = [];
         foreach (self::$myFleet as $ship) {
 
             self::$console->println();
@@ -80,11 +81,15 @@ class App
                 while ($position == null) {
                     try {
                         $input = readline("");
+                        if (in_array($input, $existingPositions)) {
+                            throw new \Exception("Position taken.");
+                        }
                         $ship->addPosition($input);
+                        $existingPositions[] = $input;
                         $position = true;
                     } catch (\Exception $e) {
                         self::$console->setForegroundColor(Color::RED);
-                        self::$console->println("Position out of reach." . Color::WHITE);
+                        self::$console->println($e->getMessage() . Color::WHITE);
                         $position = null;
                         continue;
                     }
