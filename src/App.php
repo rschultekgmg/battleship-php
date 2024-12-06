@@ -201,12 +201,12 @@ class App
 
             if (!$gameInProgress) {
                 self::$console->println(Color::YELLOW);
-                self::$console->println("Koniec gry!");
+                self::$console->println("Game over!");
             }
         }
         $closeConsole = true;
         while ($closeConsole) {    
-            self::$console->println("Wciśnij ENTER jeśli chcesz wyłączyć grę?");    
+            self::$console->println("Press ENTER if you want to quit the game");    
             readline("");
             $closeConsole = false;
         }
