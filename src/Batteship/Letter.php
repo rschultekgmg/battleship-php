@@ -19,7 +19,7 @@ class Letter
     {
         if(!in_array($letter, self::$letters))
         {
-            throw new InvalidArgumentException("Letter not exist");
+            throw new InvalidArgumentException("Invalid column - should be from A to H");
         }
 
         return $letter;
@@ -29,7 +29,7 @@ class Letter
     {
         if(!in_array($number, self::$numbers))
         {
-            throw new InvalidArgumentException("Number not exist");
+            throw new InvalidArgumentException("Invalid row - should be from 1 to 8");
         }
 
         return $number;
