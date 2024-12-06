@@ -142,7 +142,6 @@ class App
                 self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
                 self::$console->println("≋≋≋\\______________|  \\≋≋≋");
                 self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
-                self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
                 self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
                 self::$console->println("");
                 self::$console->println("Miss");
@@ -189,7 +188,6 @@ class App
                     self::$console->println(" ≋≋≋/_|_\\_|________|\\≋≋≋");
                     self::$console->println("≋≋≋\\______________|  \\≋≋≋");
                     self::$console->println("≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
-                    self::$console->println("  🌊   🌊   🌊   🌊   🌊   🌊    🌊   🌊   🌊   🌊");
                     self::$console->println("   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋");
                     self::$console->println("");
                     self::$console->println("Miss");
