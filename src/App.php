@@ -76,8 +76,19 @@ class App
 
             for ($i = 1; $i <= $ship->getSize(); $i++) {
                 printf("\nEnter position %s of %s (i.e A3):", $i, $ship->getSize());
-                $input = readline("");
-                $ship->addPosition($input);
+                $position = null;
+                while ($position == null) {
+                    try {
+                        $input = readline("");
+                        $ship->addPosition($input);
+                        $position = true;
+                    } catch (\Exception $e) {
+                        self::$console->setForegroundColor(Color::RED);
+                        self::$console->println("Error: " . $e->getMessage());
+                        $position = null;
+                        continue;
+                    }
+                }
             }
         }
     }
