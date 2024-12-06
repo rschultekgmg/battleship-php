@@ -292,10 +292,10 @@ class App
             array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 7));
             array_push(self::$enemyFleet[0]->getPositions(), new Position('B', 8));
 
+            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 5));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 6));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 7));
             array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 8));
-            array_push(self::$enemyFleet[1]->getPositions(), new Position('E', 9));
 
             array_push(self::$enemyFleet[2]->getPositions(), new Position('A', 3));
             array_push(self::$enemyFleet[2]->getPositions(), new Position('B', 3));
