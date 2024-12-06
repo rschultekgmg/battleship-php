@@ -149,7 +149,7 @@ class App
             }
             $gameInProgress = self::endGame(self::$enemyFleet);
             if(!$gameInProgress) {
-                // self::showVictoryMessage();
+                 self::showVictoryMessage();
             }
             self::$console->println(Color::WHITE);
 
@@ -214,7 +214,7 @@ class App
     private static function showVictoryMessage() {
         self::beep();
         self::$console->println(Color::YELLOW);
-        self::$console->println("       ⭐️ YOU ARE AWESOME! ⭐️");
+        self::$console->println("       ⭐️ YOU ARE THE WINNER! ⭐️");
         self::$console->println("    \\☆.。.:*・°☆.。.:*・°☆.。.:*・°☆./");
         self::$console->println("         _______________");
         self::$console->println("        |@@@@|     |####|");
