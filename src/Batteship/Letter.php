@@ -8,6 +8,7 @@ class Letter
 {
 
     public static $letters = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H');
+    public static $numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
 
     public static function value($index)
     {
@@ -22,5 +23,15 @@ class Letter
         }
 
         return $letter;
+    }
+
+    public static function validateNumber($number) : string
+    {
+        if(!in_array($number, self::$numbers))
+        {
+            throw new InvalidArgumentException("Number not exist");
+        }
+
+        return $number;
     }
 }
